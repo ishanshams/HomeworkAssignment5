@@ -198,6 +198,13 @@ public class BTNode<E> {
 		return (int)treeSize(root) - countLeaves(root);
 	}
 	
+	public static <E> E findParentNode(BTNode<E> root){
+		if(root != null){
+			return root.getParent().getData();
+		}
+		else
+			 return (findParentNode(root.left));
+	}
 	
 	/*
 	public boolean search(E element){

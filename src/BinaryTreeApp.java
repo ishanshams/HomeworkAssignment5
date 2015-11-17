@@ -36,5 +36,6 @@ public class BinaryTreeApp {
                 System.out.println("\n"+ tree.getRoot().getData() + " is a root node");
                 System.out.println("\n"+ BTNode.countLeaves(tree) + " number of leaves");
                 System.out.println("\n"+ BTNode.countNonLeaves(tree) + " number of non-leaves");
+                System.out.println("\n"+ BTNode.findParentNode(tree) + " is the parent of tree ");
     }
 }
