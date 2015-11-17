@@ -68,9 +68,7 @@ public class BTNode<E> {
 		System.out.print(data+",");
 	}
 	
-	public boolean isLeaf(){
-		return (left==null && right ==null);
-	}
+	
 	
 	public BTNode<E> getParent(){
 		return parent; 
@@ -176,6 +174,30 @@ public class BTNode<E> {
 		else
 			return (1+treeSize(root.left) + treeSize(root.right));
 	}
+	
+	public boolean isLeaf(){
+		return (left==null && right ==null);
+	}
+	/**
+	 * This method returns the total number of leaves in the tree
+	 * @param root
+	 * @return numberOfLeaves
+	 */
+	public static <E> int countLeaves(BTNode<E> root) {
+		
+		if (root == null || root.getLeft() == null && root.getLeft() == null) return 0;
+		else
+			return (1 + countLeaves(root.left) + countLeaves(root.right));
+	}
+	/**
+	 * This method returns the total number of non-leaves in the tree
+	 * @param root
+	 * @return numberOfNonLeaves
+	 */
+	public static <E> int countNonLeaves(BTNode<E> root) {
+		return (int)treeSize(root) - countLeaves(root);
+	}
+	
 	
 	/*
 	public boolean search(E element){
